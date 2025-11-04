@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ricoh Resume Assistant | DL Midterm</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --ink: #1f2937;
+      --brand: #0b5fff;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --line: #e5e7eb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--line);
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    header h1 {
+      font-size: 1.25rem;
+      margin: 0;
+    }
+    header .byline {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    main {
+      max-width: 900px;
+      margin: 36px auto;
+      padding: 0 16px;
+    }
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+    .hero h2 { margin: 0 0 8px 0; font-size: 1.35rem; }
+    .hero p { margin: 6px 0; color: var(--muted); }
+    .list {
+      margin: 18px 0 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 24px 16px 60px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #3730a3;
+      font-weight: 600;
+      font-size: 0.85rem;
+      border: 1px solid #e0e7ff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ricoh Resume Assistant — Web Demo</h1>
+    <div class="byline">Thomas Paul &amp; Zixu Gong</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="badge">DL Midterm • IBM watsonx Assistant</div>
+      <h2>Purpose</h2>
+      <p>This page embeds our task‑oriented bot for Ricoh USA’s internship screening. Use the chat widget to run ranking, fairness checks, and exports.</p>
+      <h3>Try these prompts</h3>
+      <ul class="list">
+        <li><strong>rank resumes</strong></li>
+        <li><strong>run fairness check</strong></li>
+        <li><strong>export shortlist</strong></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Ricoh Resume Assistant — Demo page for course submission.
+  </footer>
+
+  <!-- IBM Watson Assistant Web Chat integration -->
+  <script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "f68a887a-ce59-400c-8d1c-be725ba3bf5f", // The ID of this integration.
+    region: "us-south", // The region your integration is hosted in.
+    serviceInstanceID: "fa3dd914-feec-4deb-adf4-484bf2882870", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+</body>
+</html>
